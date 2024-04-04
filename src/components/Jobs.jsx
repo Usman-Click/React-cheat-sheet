@@ -1,6 +1,9 @@
 import React from 'react'
-import pin from '../assets/img/location_pin.svg'
-import logo from '../assets/img/logo.png'
+import JobCard from './JobCard'
+
+
+const job_type="React.js Developer";
+const job_desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. ipsum sequi tempore numquam officiis libero asperiores necessitatibus?";
 
 function Jobs() {
   return (
@@ -13,76 +16,21 @@ function Jobs() {
             {/* Jobs */}
             <div className=" container mx-auto flex flex-col items-center space-y-4 md:flex-row mt-5 md:space-x-4 md:space-y-0">
 
-                {/* Card */}
-                <div className="flex flex-col bg-grey-100 p-5  bg-gray-100">
-                    <h6 className="text-gray-600">Fulltime</h6>
-                    <h1 className='font-bold mt-2 mb-4'>React.js Developer</h1>
+            {/* Card 1 */}
+            <JobCard/>
 
-                    <p className="mb-4 ">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.  ipsum sequi tempore numquam officiis libero asperiores necessitatibus?
-                    </p>
-                    <h6 className="text-gray-600">$70k - 98k /year</h6>
+            {/* Card 2 */}
+            <JobCard job_type='React Native Developer'/>
 
-                    <div className="flex justify-between my-4">
+            {/* Card 3 */}
+            <JobCard />
 
-                        <div className="flex">
-                        <img src={pin} alt="" className='h-8 w-8' />
-                        <h4>California, United State</h4>
-                        </div>
-
-                        <a href="#" className="text-white bg-indigo-500 rounded-md py-2 px-4">Apply</a>
-                        
-                    </div>
-                </div>
-
-                  {/* Card */}
-                  <div className="flex flex-col bg-grey-100 p-5  bg-gray-100">
-                    <h6 className="text-gray-600">Fulltime</h6>
-                    <h1 className='font-bold mt-2 mb-4'>React.js Developer</h1>
-
-                    <p className="mb-4 ">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.  ipsum sequi tempore numquam officiis libero asperiores necessitatibus?
-                    </p>
-                    <h6 className="text-gray-600">$70k - 98k /year</h6>
-
-                    <div className="flex justify-between my-4">
-
-                        <div className="flex">
-                        <img src={pin} alt="" className='h-8 w-8' />
-                        <h4>California, United State</h4>
-                        </div>
-
-                        <a href="#" className="text-white bg-indigo-500 rounded-md py-2 px-4">Apply</a>
-                        
-                    </div>
-                </div>
-
-                  {/* Card */}
-                  <div className="flex flex-col bg-grey-100 p-5  bg-gray-100">
-                    <h6 className="text-gray-600">Fulltime</h6>
-                    <h1 className='font-bold mt-2 mb-4'>React.js Developer</h1>
-
-                    <p className="mb-4 ">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.  ipsum sequi tempore numquam officiis libero asperiores necessitatibus?
-                    </p>
-                    <h6 className="text-gray-600">$70k - 98k /year</h6>
-
-                    <div className="flex justify-between my-4">
-
-                        <div className="flex">
-                        <img src={pin} alt="" className='h-8 w-8' />
-                        <h4>California, United State</h4>
-                        </div>
-
-                        <a href="#" className="text-white bg-indigo-500 rounded-md py-2 px-4">Apply</a>
-                        
-                    </div>
-                </div>
+              
 
             </div>
 
             {/* Footer */}
-            <a href="#" className='bg-black rounded-md text-white py-2 px-6 my-10'>Browse more</a>
+            <a href="#" className='bg-black rounded-md text-white py-2 px-6 my-10 hover:opacity-50'>Browse more</a>
 
         </section>
 
