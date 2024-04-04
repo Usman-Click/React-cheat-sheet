@@ -7,7 +7,7 @@ function Hero() {
     
     <div className="flex flex-col items-center p-10 bg-indigo-700 text-white
                    md:p-20">
-      <h1 className='text-4xl font-black'>Becomw a react dev</h1>
+      <h1 className='text-4xl font-black'>Become a react dev</h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam itaque</p>
    </div>
 
