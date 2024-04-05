@@ -20,6 +20,7 @@ const App = () => {
 
 
     <ul>
+      {/* map() creates a new array from calling a function for every array element and assign the array name as the name of the paramter (ie: name (in here)) */}
       {list.map((name, index) => (
         <li key={index}>{name}</li>
       ))}
