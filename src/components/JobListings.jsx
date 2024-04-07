@@ -11,7 +11,7 @@ function JobListings() {
         <section className="flex flex-col justify-between mt-12 items-center">
 
               {/* Title */}
-              <h1 className='text-4xl font-semibold'>Browse Jobs</h1>
+              <h1 className='text-4xl font-semibold mb-8'>Browse Jobs</h1>
 
               {/* Jobs */}
                 <div className=" container mx-auto grid grid-col-1 gap-6 md:grid-cols-3">
@@ -22,7 +22,7 @@ function JobListings() {
                       key={job.id} 
                       type={job.type}
                       title={job.title}
-                      location={job.salary}
+                      location={job.location}
                       description={job.description}
                       salary={job.salary}
                       />                  
