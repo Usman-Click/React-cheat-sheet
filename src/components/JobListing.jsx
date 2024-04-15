@@ -4,8 +4,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 
-
-
 function JobCard({id, type, title, description, location, salary}) {
 
   // showFullDesc = val of the state
@@ -44,7 +42,7 @@ function JobCard({id, type, title, description, location, salary}) {
                         <h4>{location}</h4>
                         </div>
 
-                        <Link to={`jobs/${id}`} className="text-white bg-indigo-500 rounded-md py-2 px-4 hover:opacity-50">
+                        <Link to={`/jobs/${id}`} className="text-white bg-indigo-500 rounded-md py-2 px-4 hover:opacity-50">
                           Apply</Link>
                         
                     </div>
