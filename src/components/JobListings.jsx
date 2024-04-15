@@ -2,7 +2,7 @@ import React from 'react'
 import JobListing from './JobListing'
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-
+import Spinner from './Spinner';
 function JobListings({showAllJobs = false,}) {
 
   const [jobs, setJobs] = useState([]);
@@ -41,12 +41,14 @@ function JobListings({showAllJobs = false,}) {
               <h1 className='text-4xl font-semibold mb-8'>{showAllJobs ? 'ALL Jobs' : 'Recent Jobs'}</h1>
 
               {/* Jobs */}
-                <div className=" container mx-auto grid grid-col-1 gap-6 md:grid-cols-3">
+                <div >
                   {
-                  
-                  loading ? (<h3>Loading</h3>)
+                  loading ? 
+
+                  <Spinner />
+
                    :
-                   ( <>  
+                   ( <div className=" container mx-auto grid grid-col-1 gap-6 md:grid-cols-3">  
                  
                       {jobs.map((job) => (
 
@@ -57,7 +59,7 @@ function JobListings({showAllJobs = false,}) {
 
                      ))} 
                   
-                  </>)
+                  </div>)
 
                   }
                 
