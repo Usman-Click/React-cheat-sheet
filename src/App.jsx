@@ -8,6 +8,8 @@ import MainLayout from './layout/MainLayout'
 import HomePage from './pages/HomePage'
 import JobsPage from './pages/JobsPage'
 import AddJobsPage from './pages/AddJobsPage'
+import NotFoundPage from './pages/NotFoundPage'
+
 
 
 import React from 'react'
@@ -22,6 +24,7 @@ function App() {
                     <Route index element={<HomePage />}/>
                     <Route path='/jobs' element={<JobsPage />}/>
                     <Route path='/add-jobs' element={<AddJobsPage />}/>
+                    <Route path='*' element={<NotFoundPage />}/>
 
                   </Route>
                   

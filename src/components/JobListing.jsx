@@ -1,10 +1,12 @@
 import React from 'react'
 import {FaMapMarker} from 'react-icons/fa'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
-function JobCard({type, title, description, location, salary}) {
+
+function JobCard({id, type, title, description, location, salary}) {
 
   // showFullDesc = val of the state
   // setShowFullDesc = func to set the val
@@ -42,7 +44,8 @@ function JobCard({type, title, description, location, salary}) {
                         <h4>{location}</h4>
                         </div>
 
-                        <a href="#" className="text-white bg-indigo-500 rounded-md py-2 px-4 hover:opacity-50">Apply</a>
+                        <Link to={`job/${id}`} className="text-white bg-indigo-500 rounded-md py-2 px-4 hover:opacity-50">
+                          Apply</Link>
                         
                     </div>
                 </div>

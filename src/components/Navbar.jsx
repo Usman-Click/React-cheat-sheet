@@ -17,7 +17,6 @@ function Navbar() {
             <div className="flex items-center">
             <img src={logo} alt="" className="w-10 h-10 rounded-full hover:opacity-50 " />
             <h1 className="font-bold text-white text-2xl ml-2">React Jobs</h1>
-
             </div>
 
             <div className='flex justify-between items-center space-x-4 '>
