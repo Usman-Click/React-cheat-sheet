@@ -4,10 +4,10 @@ import { useNavigate } from 'react-router-dom';
 
 function AddJobsPage({addNewJob}) {
 
-  const [type, setType] = useState('');
+  const [type, setType] = useState('Full-Time');
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');
-  const [salary, setSalary] = useState('');
+  const [salary, setSalary] = useState('Under $50k');
   const [location, setLocation] = useState('');
   const [companyName, setCompanyName] = useState('');
   const [companyDesc, setCompanyDesc] = useState('');

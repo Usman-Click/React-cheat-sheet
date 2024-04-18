@@ -14,8 +14,15 @@ import React from 'react'
 
 function App() {
 
-  const submitJob = (newJob) => {
-    console.log(newJob)
+  const submitJob =  async (newJob) => {
+   
+    const req = await fetch('http://localhost:5000/jobs', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(newJob),
+    })
 
   }
 
