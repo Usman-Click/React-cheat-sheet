@@ -1,5 +1,5 @@
 import React from 'react'
-import JobListings from '../components/JobListings'
+import JobListings from '../components/JobListingsCom'
 
 function JobsPage() {
   return  <JobListings showAllJobs={true} />

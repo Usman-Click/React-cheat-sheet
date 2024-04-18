@@ -1,6 +1,6 @@
 import React from 'react'
-import Hero from '../components/Hero'
-import JobListings from '../components/JobListings'
+import Hero from '../components/HeroCom'
+import JobListings from '../components/JobListingsCom'
 
 function HomePage() {
   return (

@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams, useLoaderData } from 'react-router-dom'
 import { useState } from 'react'
 import { FaArrowLeft } from 'react-icons/fa'
-import ManageJob from '../components/ManageJob'
+import ManageJob from '../components/ManageJobCom'
 import { Link } from 'react-router-dom'
 
 function JobPage() {
@@ -56,7 +56,7 @@ function JobPage() {
         </div>
       </div>
 
-      <ManageJob />
+      <ManageJob id={job.id} />
 
       </div>
 
