@@ -13,7 +13,12 @@ function JobListings({showAllJobs = false,}) {
       const fetchJobs = async() => {
         try{
             // featch the data
-            const resourse = await fetch('http://localhost:5000/jobs');
+            var resourse = null;
+            if(!showAllJobs){
+             resourse = await fetch('http://localhost:5000/jobs?_limit=3');
+            }else{
+               resourse = await fetch('http://localhost:5000/jobs');
+            }
             // convert the data
             const data = await resourse.json();
              // save the data

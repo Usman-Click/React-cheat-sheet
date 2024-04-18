@@ -4,15 +4,15 @@ import { useNavigate } from 'react-router-dom';
 
 function JobFormCom({isAddPage, job}) {
 
-    const [type, setType] = useState('Full-Time');
-    const [title, setTitle] = useState('');
-    const [desc, setDesc] = useState('');
-    const [salary, setSalary] = useState('Under $50k');
-    const [location, setLocation] = useState('');
-    const [companyName, setCompanyName] = useState('');
-    const [companyDesc, setCompanyDesc] = useState('');
-    const [companyMail, setCompanyMail] = useState('');
-    const [companyTel, setCompanyTel] = useState('');
+    const [type, setType] = useState(!isAddPage ? job.type : 'Full-Time');
+    const [title, setTitle] = useState(!isAddPage ? job.title : "");
+    const [desc, setDesc] = useState(!isAddPage ? job.description : "");
+    const [salary, setSalary] = useState(!isAddPage ? job.salary : 'Under $50k');
+    const [location, setLocation] = useState(!isAddPage ? job.location : "");
+    const [companyName, setCompanyName] = useState(!isAddPage ? job.company.name : "");
+    const [companyDesc, setCompanyDesc] = useState(!isAddPage ? job.description : "");
+    const [companyMail, setCompanyMail] = useState(!isAddPage ? job.company.contactEmail : "");
+    const [companyTel, setCompanyTel] = useState(!isAddPage ? job.company.contactPhone : "");
   
     const navigate = useNavigate();
   
@@ -33,8 +33,10 @@ function JobFormCom({isAddPage, job}) {
         }
   
       }
+
+       isAddPage ? addNewJob(newJob) : editJob(newJob);
+
   
-      addNewJob(newJob)
   
       return navigate('/jobs')
     }
@@ -50,6 +52,20 @@ function JobFormCom({isAddPage, job}) {
       },
       body: JSON.stringify(newJob),
     })
+
+  }
+
+  // Edit job
+  const editJob = async (updatedJob) => {
+    const req = await fetch(`http://localhost:5000/jobs/${job.id}`, {
+        method: 'PUT',
+        body: JSON.stringify(updatedJob),
+        headers: {
+            'content-type': 'application/json'
+        } 
+    })
+
+        
   }
 
   return (
@@ -62,7 +78,7 @@ function JobFormCom({isAddPage, job}) {
         
     <div>
         <label htmlFor="" className='font-bold text-sm'>Job Type</label>
-        <select name="" id="" className='w-full p-2 border mt-1' value={isAddPage ? type : job.type} onChange={(e) => setType(e.target.value)}>
+        <select name="" id="" className='w-full p-2 border mt-1' value={type} onChange={(e) => setType(e.target.value)}>
           <option >Full-Time</option>
           <option >Part-Time</option>
           <option >Remote</option>
@@ -73,17 +89,17 @@ function JobFormCom({isAddPage, job}) {
         <div>
         <label htmlFor="" className='font-bold text-sm'>Job Title</label>
         <input type="text" placeholder='eg: fullstack developer ' className='border w-full p-2 mt-1'
-        value={isAddPage ? title : job.title} onChange={(e) => setTitle(e.target.value)}/>
+        value={title} onChange={(e) => setTitle(e.target.value)}/>
         </div>
 
         <div>
         <label htmlFor="" className='font-bold text-sm'>Description</label>
-        <textarea  placeholder='Description '  className='border w-full p-2 mt-1' value={isAddPage ? desc : job.description} onChange={(e) => setDesc(e.target.value)}/>
+        <textarea  placeholder='Description '  className='border w-full p-2 mt-1' value={desc} onChange={(e) => setDesc(e.target.value)}/>
         </div>
 
         <div>
         <label htmlFor="" className='font-bold text-sm'>Salary</label>
-        <select name="" id="" className='w-full p-2 border mt-1'  value={isAddPage ? salary : job.salary} onChange={(e) => setSalary(e.target.value)}>
+        <select name="" id="" className='w-full p-2 border mt-1'  value={salary} onChange={(e) => setSalary(e.target.value)}>
           <option >Under $50k</option>
           <option >Above $50k</option>
           <option >$100k-$200k</option>
@@ -93,7 +109,7 @@ function JobFormCom({isAddPage, job}) {
         <div>
         <label htmlFor="" className='font-bold text-sm'>Location</label>
         <input type='text' placeholder='eg: Lagos, Nigeria '  className='border w-full p-2 mt-1'
-         value={isAddPage ? location : job.location} onChange={(e) => setLocation(e.target.value)}/>
+         value={location} onChange={(e) => setLocation(e.target.value)}/>
         </div>
 
         <h1 className="font-bold text-2xl">Company info</h1>
@@ -101,25 +117,25 @@ function JobFormCom({isAddPage, job}) {
         <div>
         <label htmlFor="" className='font-bold text-sm'>Name</label>
         <input type='text' placeholder='Nexawave technologies '  className='border w-full p-2 mt-1'
-         value={isAddPage ? companyName : job.company.name} onChange={(e) => setCompanyName(e.target.value)}/>
+         value={companyName} onChange={(e) => setCompanyName(e.target.value)}/>
         </div>
 
         <div>
         <label htmlFor="" className='font-bold text-sm'>Description</label>
         <textarea  placeholder='Description '  className='border w-full p-2 mt-1' 
-         value={isAddPage ? companyDesc : job.company.description} onChange={(e) => setCompanyDesc(e.target.value)}/>
+         value={companyDesc} onChange={(e) => setCompanyDesc(e.target.value)}/>
         </div>
 
         <div>
         <label htmlFor="" className='font-bold text-sm'>Email</label>
         <input type='email' placeholder='Nexawave@mail.com '  className='border w-full p-2 mt-1'
-         value={isAddPage ? companyMail : job.company.contactEmail} onChange={(e) => setCompanyMail(e.target.value)}/>
+         value={companyMail} onChange={(e) => setCompanyMail(e.target.value)}/>
         </div>
 
         <div>
         <label htmlFor="" className='font-bold text-sm'>Tel</label>
-        <input type='number' placeholder='+222-333-22-111 '  className='border w-full p-2 mt-1'
-         value={isAddPage ? companyTel : job.company.contactPhone} onChange={(e) => setCompanyTel(e.target.value)}/>
+        <input type='text' placeholder='+222-333-22-111 '  className='border w-full p-2 mt-1'
+         value={companyTel} onChange={(e) => setCompanyTel(e.target.value)}/>
         </div>
 
         <button type="submit" className='bg-indigo-600 rounded-full text-white font-bold p-2 w-full'>{isAddPage ? 'Add Job' : 'Update Job'}</button>
