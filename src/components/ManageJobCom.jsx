@@ -1,9 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function ManageJob({id}) {
 
-  const del = (id) => {
+  const navigate = useNavigate();
+
+   // delete job
+   const del = async () => {
+
+    console.log(id);
+    const req = await fetch(`http://localhost:5000/jobs/${id}`, {
+      method: 'DELETE'
+    })
+
+    console.log(id);
+    navigate('/jobs');
 
   }
   

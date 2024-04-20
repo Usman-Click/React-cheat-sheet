@@ -127,49 +127,6 @@
       }
     },
     {
-      "id": "7b13",
-      "title": "",
-      "type": "",
-      "description": "",
-      "location": "",
-      "salary": "",
-      "company": {
-        "name": "",
-        "description": "",
-        "contactEmail": "",
-        "contactPhone": ""
-      }
-    },
-    {
-      "id": "b141",
-      "title": "",
-      "type": "Full-Time",
-      "description": "",
-      "location": "",
-      "salary": "Under $50k",
-      "company": {
-        "name": "",
-        "description": "",
-        "contactEmail": "",
-        "contactPhone": ""
-      }
-    },
-    {
-      "id": "b49a",
-      "title": "",
-      "type": "Full-Time",
-      "description": "",
-      "location": "",
-      "salary": "Under $50k",
-      "company": {
-        "name": "",
-        "description": "",
-        "contactEmail": "",
-        "contactPhone": ""
-      }
-    },
-    {
-      "id": "8968",
       "title": "Android Developer",
       "type": "Internship",
       "description": "<form  onSubmit={submitForm}>\n        \n<div>\n        <label htmlFor=\"\" className='font-bold text-sm'>Job Type</label>\n        <select name=\"\" id=\"\" className='w-full p-2 border mt-1' value={type} onChange={(e) => setType(e.target.value)}>\n          <option >Full-Time</option>\n          <option >Part-Time</option>\n          <option >Remote</option>\n          <option >Internship</option>\n        </select>\n        </div>\n      \n        <div>\n        <label htmlFor=\"\" className='font-bold text-sm'>Job Title</label>\n        <input type=\"text\" placeholder='eg: fullstack developer ' className='border w-full p-2 mt-1'\n        value={title} onChange={(e) => setTitle(e.target.value)}/>\n        </div>\n\n        <div>\n        <label htmlFor=\"\" className='font-bold text-sm'>Description</label>\n        <textarea  placeholder='Description '  className='border w-full p-2 mt-1' value={desc} onChange={(e) => setDesc(e.target.value)}/>\n        </div>\n\n        <div>\n        <label htmlFor=\"\" className='font-bold text-sm'>Salary</label>\n        <select name=\"\" id=\"\" className='w-full p-2 border mt-1'  value={salary} onChange={(e) => setSalary(e.target.value)}>\n          <option >Under $50k</option>\n          <option >Above $50k</option>\n          <option >$100k-$200k</option>\n        </select>\n        </div>\n\n        <div>\n        <label htmlFor=\"\" className='font-bold text-sm'>Location</label>\n        <input type='text' placeholder='eg: Lagos, Nigeria '  className='border w-full p-2 mt-1'\n         value={location} onChange={(e) => setLocation(e.target.value)}/>\n        </div>\n\n        <h1 className=\"font-bold text-2xl\">Company info</h1>\n\n        <div>\n        <label htmlFor=\"\" className='font-bold text-sm'>Name</label>\n        <input type='text' placeholder='Nexawave technologies '  className='border w-full p-2 mt-1'\n         value={companyName} onChange={(e) => setCompanyName(e.target.value)}/>\n        </div>\n\n        <div>\n        <label htmlFor=\"\" className='font-bold text-sm'>Description</label>\n        <textarea  placeholder='Description '  className='border w-full p-2 mt-1' \n         value={companyDesc} onChange={(e) => setCompanyDesc(e.target.value)}/>\n        </div>\n\n        <div>\n        <label htmlFor=\"\" className='font-bold text-sm'>Email</label>\n        <input type='email' placeholder='Nexawave@mail.com '  className='border w-full p-2 mt-1'\n         value={companyMail} onChange={(e) => setCompanyMail(e.target.value)}/>\n        </div>\n\n        <div>\n        <label htmlFor=\"\" className='font-bold text-sm'>Tel</label>\n        <input type='number' placeholder='+222-333-22-111 '  className='border w-full p-2 mt-1'\n         value={companyTel} onChange={(e) => setCompanyTel(e.target.value)}/>\n        </div>\n\n        <button type=\"submit\" className='bg-indigo-600 rounded-full text-white font-bold p-2 w-full'>Add Job</button>\n\n        </form>",
@@ -177,38 +134,11 @@
       "salary": "$100k-$200k",
       "company": {
         "name": "Nextech Inc.",
-        "description": "import { useState } from 'react'\nimport { useNavigate } from 'react-router-dom';",
+        "description": "<label htmlFor=\"\" className='font-bold text-sm'>Job Type</label>\n        <select name=\"\" id=\"\" className='w-full p-2 border mt-1' value={type} onChange={(e) => setType(e.target.value)}>\n          <option >Full-Time</option>\n          <option >Part-Time</option>\n          <option >Remote</option>\n          <option >Internship</option>\n        </select>\n        </div>\n      \n        <div>\n        <label htmlFor=\"\" className='font-bold text-sm'>Job Title</label>\n        <input type=\"text\" placeholder='eg: fullstack developer ' className='border w-full p-2 mt-1'\n        value={title} onChange={(e) => setTitle(e.target.value)}/>\n        </div>\n\n        <div>\n        <label htmlFor=\"\" className='font-bold text-sm'>Description</label>\n        <textarea  placeholder='Description '  className='border w-full p-2 mt-1' value={desc} onChange={(e) => setDesc(e.target.value)}/>\n        </div>\n\n        <div>\n        <label htmlFor=\"\" className='font-bold text-sm'>Salary</label>\n        <select name=\"\" id=\"\" className='w-full p-2 border mt-1'  value={salary} onChange={(e) => setSalary(e.target.value)}>\n          <option >Under $50k</option>\n          <option >Above $50k</option>\n          <option >$100k-$200k</option>\n        </select>\n        </div>\n\n        <div>\n        <label htmlFor=\"\" className='font-bold text-sm'>Location</label>\n        <input type='text' placeholder='eg: Lagos, Nigeria '  className='border w-full p-2 mt-1'\n         value={location} onChange={(e) => setLocation(e.target.value)}/>\n        </div>\n\n        <h1 className=\"font-bold text-2xl\">Company info</h1>\n\n        <div>\n        <label htmlFor=\"\" className='font-bold text-sm'>Name</label>\n        <input type='text' placeholder='Nexawave technologies '  className='border w-full p-2 mt-1'\n         value={companyName} onChange={(e) => setCompanyName(e.target.value)}/>\n        </div>\n\n        <div>\n        <label htmlFor=\"\" className='font-bold text-sm'>Description</label>\n        <textarea  placeholder='Description '  className='border w-full p-2 mt-1' \n         value={companyDesc} onChange={(e) => setCompanyDesc(e.target.value)}/>\n        </div>\n\n        <div>\n        <label htmlFor=\"\" className='font-bold text-sm'>Email</label>\n        <input type='email' placeholder='Nexawave@mail.com '  className='border w-full p-2 mt-1'\n         value={companyMail} onChange={(e) => setCompanyMail(e.target.value)}/>\n        </div>\n\n        <div>\n        <label htmlFor=\"\" className='font-bold text-sm'>Tel</label>\n        <input type='number' placeholder='+222-333-22-111 '  className='border w-full p-2 mt-1'\n         value={companyTel} onChange={(e) => setCompanyTel(e.target.value)}/>\n        </div>\n\n        <button type=\"submit\" className='bg-indigo-600 rounded-full text-white font-bold p-2 w-full'>Add Job</button>\n\n        </form>",
         "contactEmail": "uadamuharuna@gmail.com",
         "contactPhone": "2235426764"
-      }
-    },
-    {
-      "id": "795b",
-      "title": "",
-      "type": "Full-Time",
-      "description": "",
-      "location": "",
-      "salary": "Under $50k",
-      "company": {
-        "name": "",
-        "description": "",
-        "contactEmail": "",
-        "contactPhone": ""
-      }
-    },
-    {
-      "title": "Back end engineer",
-      "type": "Internship",
-      "description": "desc......................",
-      "location": "Jos, Nigeia",
-      "salary": "Above $50k",
-      "company": {
-        "name": "Space X",
-        "description": "desc........",
-        "contactEmail": "uadamuharuna@gmail.com",
-        "contactPhone": "5555-7777-777"
       },
-      "id": "2654"
+      "id": "8968"
     }
   ]
 }

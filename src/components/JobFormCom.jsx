@@ -16,6 +16,7 @@ function JobFormCom({isAddPage, job}) {
   
     const navigate = useNavigate();
   
+    // On form submit
     const submitForm = (e) => {
       e.preventDefault()
   
@@ -35,10 +36,7 @@ function JobFormCom({isAddPage, job}) {
       }
 
        isAddPage ? addNewJob(newJob) : editJob(newJob);
-
-  
-  
-      return navigate('/jobs')
+       return navigate('/jobs')
     }
 
 
@@ -65,7 +63,7 @@ function JobFormCom({isAddPage, job}) {
         } 
     })
 
-        
+       
   }
 
   return (
