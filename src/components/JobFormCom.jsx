@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 function JobFormCom({isAddPage, job}) {
 
@@ -51,6 +52,8 @@ function JobFormCom({isAddPage, job}) {
       body: JSON.stringify(newJob),
     })
 
+    toast('Job Added Sucessfully')
+
   }
 
   // Edit job
@@ -63,6 +66,7 @@ function JobFormCom({isAddPage, job}) {
         } 
     })
 
+     toast('Job Edited Sucessfully')
        
   }
 

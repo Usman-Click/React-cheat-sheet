@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify';
 
 function ManageJob({id}) {
 
@@ -13,7 +14,8 @@ function ManageJob({id}) {
       method: 'DELETE'
     })
 
-    console.log(id);
+    toast('Job Deleted Sucessfully')
+
     navigate('/jobs');
 
   }
